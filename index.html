@@ -229,9 +229,6 @@
           <button onclick="vcrFastForward()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-cyan-600 rounded text-xs font-bold text-slate-200 flex items-center gap-1 border border-slate-700 transition">
             <i class="ph-bold ph-fast-forward"></i> FF
           </button>
-          <button onclick="openAddVlogModal()" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1 border border-amber-300 transition shadow-md shadow-amber-500/20">
-            <i class="ph-bold ph-plus-circle text-sm"></i> LOG NEW VLOG DAY
-          </button>
         </div>
       </div>
     </header>
@@ -496,49 +493,6 @@
           </button>
         </div>
 
-      </div>
-    </div>
-
-    <!-- Modal 2: Log New Class Vlog Day & Classmates -->
-    <div id="addVlogModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-      <div class="bg-slate-900 border-2 border-amber-500/60 rounded-2xl max-w-lg w-full p-6 relative shadow-2xl overflow-hidden crt-flicker">
-        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-cyan-400 to-purple-500"></div>
-
-        <button onclick="closeAddVlogModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
-          <i class="ph-bold ph-x"></i>
-        </button>
-
-        <div class="flex items-center gap-3 mb-4 pt-1">
-          <div class="p-2.5 bg-amber-950 border border-amber-700 text-amber-400 rounded-xl text-2xl">
-            <i class="ph-bold ph-video-camera"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-vcr text-amber-400 font-bold uppercase tracking-wider">LOG CLASS VLOG DAY</h2>
-            <p class="text-xs text-slate-400">Record a new vlog day and tag classmates present!</p>
-          </div>
-        </div>
-
-        <form onsubmit="submitNewVlogDay(event)" class="space-y-4">
-          <div>
-            <label class="block text-xs font-vcr text-slate-300 mb-1">VLOG CLASS DATE (e.g. Sep. 18, 2026)</label>
-            <input type="text" id="newVlogDate" required placeholder="Sep. 18, 2026" class="w-full bg-slate-950 border border-slate-700 text-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-amber-500 font-mono">
-          </div>
-
-          <div>
-            <label class="block text-xs font-vcr text-slate-300 mb-1">TAGGED CLASSMATES (COMMA SEPARATED)</label>
-            <textarea id="newVlogStudents" rows="3" required placeholder="Aaron Chapa, Montserrat Hernandez, Walter Gonzalez..." class="w-full bg-slate-950 border border-slate-700 text-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-amber-500 font-mono"></textarea>
-            <span class="text-[11px] text-slate-500">If student name already exists, cameo count will be updated automatically!</span>
-          </div>
-
-          <div class="pt-3 border-t border-slate-800 flex items-center justify-end gap-3">
-            <button type="button" onclick="closeAddVlogModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-vcr rounded-lg">
-              CANCEL
-            </button>
-            <button type="submit" class="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs font-vcr rounded-lg border border-amber-300 flex items-center gap-1.5">
-              <i class="ph-bold ph-floppy-disk text-sm"></i> RECORD TO VLOG TAPE
-            </button>
-          </div>
-        </form>
       </div>
     </div>
 
@@ -1086,55 +1040,6 @@
           }
         }
       });
-    }
-
-    function openAddVlogModal() {
-      playSynthBeep(800, 0.08);
-      document.getElementById('addVlogModal').classList.remove('hidden');
-    }
-
-    function closeAddVlogModal() {
-      playSynthBeep(400, 0.05);
-      document.getElementById('addVlogModal').classList.add('hidden');
-    }
-
-    function submitNewVlogDay(e) {
-      e.preventDefault();
-      const dateStr = document.getElementById('newVlogDate').value.trim();
-      const rawNames = document.getElementById('newVlogStudents').value.split(',').map(n => n.trim()).filter(Boolean);
-
-      if (!dateStr || rawNames.length === 0) return;
-
-      if (!UNIQUE_DATES.includes(dateStr)) {
-        UNIQUE_DATES.push(dateStr);
-      }
-
-      rawNames.forEach(name => {
-        let student = RAW_DATA.find(s => s.name.toLowerCase() === name.toLowerCase());
-        if (student) {
-          if (!student.timestamps.includes(dateStr)) {
-            student.timestamps.push(dateStr);
-            student.count = student.timestamps.length;
-          }
-        } else {
-          RAW_DATA.push({
-            name: name,
-            count: 1,
-            timestamps: [dateStr]
-          });
-        }
-      });
-
-      // Persist locally
-      localStorage.setItem('chromebook_vlog_data', JSON.stringify({ RAW_DATA, UNIQUE_DATES }));
-
-      closeAddVlogModal();
-      document.getElementById('newVlogDate').value = '';
-      document.getElementById('newVlogStudents').value = '';
-
-      filterData();
-      initScrubber();
-      playSynthBeep(950, 0.12);
     }
 
     function saveMemo(e) {
