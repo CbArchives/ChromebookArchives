@@ -173,9 +173,6 @@
         
         <!-- Title & Play Status -->
         <div class="flex items-center space-x-4">
-          <div class="relative flex items-center justify-center w-12 h-12 bg-slate-800 rounded-lg border border-slate-700">
-            <i id="vcrStateIcon" class="ph-bold ph-play text-2xl text-emerald-400 animate-pulse"></i>
-          </div>
           <div>
             <div class="flex items-center gap-3">
               <span id="vcrStatusBadge" class="font-vcr text-2xl font-bold text-emerald-400 glow-green tracking-widest">PLAY ▶</span>
@@ -184,7 +181,7 @@
               </span>
             </div>
             <h1 class="text-xl sm:text-2xl font-extrabold tracking-wider bg-gradient-to-r from-cyan-400 via-teal-300 to-amber-300 bg-clip-text text-transparent uppercase font-vcr">
-              Chromebook Archives: Senior Year // 2026-27
+              Chromebook Archives: Senior Year
             </h1>
           </div>
         </div>
@@ -193,21 +190,16 @@
         <div class="flex flex-wrap items-center gap-4 text-sm font-vcr text-cyan-300">
           
           <!-- Cassette Reel Visualizer -->
-          <div class="hidden sm:flex items-center space-x-2 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+          <div class="hidden sm:flex items-center space-x-3 bg-slate-950 px-4 py-1.5 rounded-lg border border-slate-800">
             <div id="spoolLeft" class="tape-spool w-5 h-5 rounded-full border-2 border-dashed border-cyan-400 flex items-center justify-center">
               <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
             </div>
-            <div class="w-12 h-1.5 bg-cyan-900/80 rounded relative overflow-hidden">
+            <div class="w-36 sm:w-48 md:w-64 h-2 bg-cyan-900/80 rounded relative overflow-hidden">
               <div id="tapeProgressBar" class="h-full bg-cyan-400 w-1/3"></div>
             </div>
             <div id="spoolRight" class="tape-spool w-5 h-5 rounded-full border-2 border-dashed border-cyan-400 flex items-center justify-center">
               <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
             </div>
-          </div>
-
-          <!-- Time & OSD -->
-          <div class="bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800 flex items-center gap-3 text-lg">
-            <div id="vcrClock" class="text-emerald-400 glow-green">SEP 17 2026 10:36 AM</div>
           </div>
 
           <!-- Audio & CRT Effects Toggles -->
@@ -253,11 +245,11 @@
       </button>
       <button onclick="switchTab('seek')" id="tab-seek" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-video-camera text-lg text-amber-400"></i>
-        VLOG TIMELINE SCRUBBER
+        VLOG TIMELINE
       </button>
       <button onclick="switchTab('stats')" id="tab-stats" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-chart-bar text-lg text-emerald-400"></i>
-        SPECTRUM ANALYZER
+        DATA CENTER
       </button>
     </nav>
 
@@ -293,7 +285,7 @@
           <!-- Quick Stats Bar -->
           <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400 font-mono">
             <div>
-              SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">34</span> CASSETTES
+              SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">34</span> LOGGED DATA
             </div>
             <div class="text-slate-500">
               TOTAL CLASS RECORDS: <span id="totalClassRecords" class="text-slate-300 font-bold">34</span>
@@ -456,7 +448,7 @@
           </div>
           <div>
             <span id="modalRankBadge" class="text-xs font-vcr px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">TAPE RECORD</span>
-            <h2 id="modalStudentName" class="text-2xl font-marker text-slate-100 mt-1">Student Name</h2>
+            <h2 id="modalStudentName" class="text-xl sm:text-2xl font-marker text-slate-100 mt-1">Student Name</h2>
           </div>
         </div>
 
@@ -464,6 +456,13 @@
           <div class="flex justify-between items-center text-xs font-vcr">
             <span class="text-slate-400">TOTAL VLOG CAMEOS:</span>
             <span id="modalCount" class="text-cyan-400 font-bold text-base">5 Cameos</span>
+          </div>
+          <div class="flex justify-between items-center text-xs font-vcr pt-2 border-t border-slate-800/80">
+            <span class="text-slate-400">TARGET UNIVERSITY:</span>
+            <span id="modalUniversity" class="text-amber-300 font-bold text-sm flex items-center gap-1.5">
+              <i class="ph-bold ph-graduation-cap text-amber-400 text-base"></i>
+              <span>TBA</span>
+            </span>
           </div>
         </div>
 
@@ -499,40 +498,40 @@
   <script>
     // Raw Dataset compiled from Senior Year Chromebook Class Vlog Logs
     let RAW_DATA = [
-      { name: "Nicholas Garcia", count: 2, timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
-      { name: "Aaron Chapa", count: 5, timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026"] },
-      { name: "Mathieu Birch", count: 1, timestamps: ["Aug. 18, 2026"] },
-      { name: "Jose Alvarez", count: 3, timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
-      { name: "Zoe Zaragoza", count: 2, timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
-      { name: "Allegra Gonzalez", count: 1, timestamps: ["Aug. 19, 2026"] },
-      { name: "Andres Chavarria", count: 1, timestamps: ["Aug. 19, 2026"] },
-      { name: "Santiago Contreras", count: 2, timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
-      { name: "Felipe Rivera", count: 2, timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
-      { name: "Ava Farias", count: 2, timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
-      { name: "Kali Vazquez", count: 1, timestamps: ["Aug. 19, 2026"] },
-      { name: "Montserrat Hernandez", count: 5, timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
-      { name: "Matthew Montelongo", count: 2, timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
-      { name: "Walter Gonzalez", count: 4, timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
-      { name: "Kimberly Saavedra", count: 4, timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026"] },
-      { name: "Sophia Garcia", count: 2, timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
-      { name: "Justin Tanguma", count: 4, timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026"] },
-      { name: "Enrique Paredes", count: 3, timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026"] },
-      { name: "Romina Castillo", count: 2, timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
-      { name: "Rihanna Flores", count: 1, timestamps: ["Sep. 01, 2026"] },
-      { name: "Israel Ramirez", count: 1, timestamps: ["Sep. 01, 2026"] },
-      { name: "Monserrat Sanchez", count: 1, timestamps: ["Sep. 01, 2026"] },
-      { name: "Keara Cruz", count: 1, timestamps: ["Sep. 02, 2026"] },
-      { name: "Regina Sanchez", count: 1, timestamps: ["Sep. 02, 2026"] },
-      { name: "Gianna Ortegon", count: 1, timestamps: ["Sep. 02, 2026"] },
-      { name: "Aaron Trevino", count: 1, timestamps: ["Sep. 02, 2026"] },
-      { name: "Juan-Carlos Garza", count: 1, timestamps: ["Sep. 08, 2026"] },
-      { name: "Jose Ramos", count: 1, timestamps: ["Sep. 11, 2026"] },
-      { name: "Cristian Montiel", count: 2, timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
-      { name: "Diana Garcia", count: 1, timestamps: ["Sep. 14, 2026"] },
-      { name: "Mia Perez", count: 1, timestamps: ["Sep. 14, 2026"] },
-      { name: "Mia Trevino", count: 1, timestamps: ["Sep. 14, 2026"] },
-      { name: "Santiago Vazquez", count: 1, timestamps: ["Sep. 14, 2026"] },
-      { name: "Angeline Gutierrez", count: 2, timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] }
+      { name: "Nicholas Garcia", count: 2, university: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
+      { name: "Aaron Chapa", count: 5, university: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026"] },
+      { name: "Mathieu Birch", count: 1, university: "TBA", timestamps: ["Aug. 18, 2026"] },
+      { name: "Jose Alvarez", count: 3, university: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Zoe Zaragoza", count: 2, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
+      { name: "Allegra Gonzalez", count: 1, university: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Andres Chavarria", count: 1, university: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Santiago Contreras", count: 2, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
+      { name: "Felipe Rivera", count: 2, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
+      { name: "Ava Farias", count: 2, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
+      { name: "Kali Vazquez", count: 1, university: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Montserrat Hernandez", count: 5, university: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
+      { name: "Matthew Montelongo", count: 2, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
+      { name: "Walter Gonzalez", count: 4, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
+      { name: "Kimberly Saavedra", count: 4, university: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026"] },
+      { name: "Sophia Garcia", count: 2, university: "TBA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Justin Tanguma", count: 4, university: "TBA", timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026"] },
+      { name: "Enrique Paredes", count: 3, university: "TBA", timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026"] },
+      { name: "Romina Castillo", count: 2, university: "TBA", timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
+      { name: "Rihanna Flores", count: 1, university: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Israel Ramirez", count: 1, university: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Monserrat Sanchez", count: 1, university: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Keara Cruz", count: 1, university: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Regina Sanchez", count: 1, university: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Gianna Ortegon", count: 1, university: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Aaron Trevino", count: 1, university: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Juan-Carlos Garza", count: 1, university: "TBA", timestamps: ["Sep. 08, 2026"] },
+      { name: "Jose Ramos", count: 1, university: "TBA", timestamps: ["Sep. 11, 2026"] },
+      { name: "Cristian Montiel", count: 2, university: "TBA", timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
+      { name: "Diana Garcia", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Mia Perez", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Mia Trevino", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Santiago Vazquez", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Angeline Gutierrez", count: 2, university: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] }
     ];
 
     // Unique list of dates in chronological order
@@ -765,7 +764,7 @@
 
       badge.textContent = statusText;
       badge.className = `font-vcr text-2xl font-bold tracking-widest ${colorClass}`;
-      icon.className = `ph-bold ${iconClass} text-2xl ${colorClass} animate-pulse`;
+      if (icon) icon.className = `ph-bold ${iconClass} text-2xl ${colorClass} animate-pulse`;
 
       spoolL.className = `w-5 h-5 rounded-full border-2 border-dashed border-cyan-400 flex items-center justify-center ${spoolClass}`;
       spoolR.className = `w-5 h-5 rounded-full border-2 border-dashed border-cyan-400 flex items-center justify-center ${spoolClass}`;
@@ -825,7 +824,8 @@
 
       let filtered = RAW_DATA.filter(item => {
         const matchesSearch = item.name.toLowerCase().includes(searchVal) || 
-                              item.timestamps.some(t => t.toLowerCase().includes(searchVal));
+                              item.timestamps.some(t => t.toLowerCase().includes(searchVal)) ||
+                              (item.university && item.university.toLowerCase().includes(searchVal));
         return matchesSearch;
       });
 
@@ -869,15 +869,14 @@
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-2 text-xs">
-              <span class="font-vcr text-slate-400">SUBJECT #${String(index + 1).padStart(3, '0')}</span>
+              <span class="font-vcr text-slate-400">SENIOR #${String(index + 1).padStart(3, '0')}</span>
               <span class="px-2 py-0.5 rounded text-[11px] font-bold border font-vcr flex items-center gap-1 ${rank.class}">
                 <span>${rank.icon}</span> ${rank.name.toUpperCase()} (${item.count})
               </span>
             </div>
 
-            <div class="masking-tape rounded px-3 py-2 my-2 text-slate-900 border border-amber-300/80">
-              <div class="text-xs uppercase font-sans tracking-tight text-slate-600">SENIOR VLOG 2027</div>
-              <div class="font-marker text-lg leading-tight text-slate-900 truncate" title="${item.name}">${item.name}</div>
+            <div class="masking-tape rounded px-3.5 py-3 my-2.5 min-h-[54px] flex items-center border border-amber-300/80">
+              <div class="font-marker text-base sm:text-lg leading-tight text-slate-900 truncate w-full" title="${item.name}">${item.name}</div>
             </div>
           </div>
 
@@ -901,6 +900,11 @@
       playSynthBeep(850, 0.08);
       document.getElementById('modalStudentName').textContent = item.name;
       document.getElementById('modalCount').textContent = `${item.count} Vlog Cameos`;
+
+      const univElem = document.getElementById('modalUniversity');
+      if (univElem) {
+        univElem.querySelector('span').textContent = item.university || 'Undecided';
+      }
 
       const rank = getRankInfo(item.count);
       const badgeElem = document.getElementById('modalRankBadge');
@@ -1154,22 +1158,9 @@
       });
     }
 
-    function startVcrClock() {
-      const updateClock = () => {
-        const now = new Date();
-        const hrs = String(now.getHours() % 12 || 12).padStart(2, '0');
-        const mins = String(now.getMinutes()).padStart(2, '0');
-        const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
-        document.getElementById('vcrClock').textContent = `SEP 17 2026 ${hrs}:${mins} ${ampm}`;
-      };
-      updateClock();
-      setInterval(updateClock, 1000);
-    }
-
     window.onload = function() {
       filterData();
       initScrubber();
-      startVcrClock();
     };
   </script>
 </body>
