@@ -278,7 +278,7 @@
     <nav class="flex flex-wrap items-center gap-2 mb-6">
       <button onclick="switchTab('archive')" id="tab-archive" class="nav-tab active-tab px-4 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold border border-cyan-400 flex items-center gap-2 text-sm transition shadow-lg shadow-cyan-500/20">
         <i class="ph-bold ph-cassette-tape text-lg"></i>
-        PROFILE TAPES (<span id="totalStudentsBadge">34</span>)
+        PROFILE TAPES (<span id="totalStudentsBadge">40</span>)
       </button>
       <button onclick="switchTab('seek')" id="tab-seek" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-video-camera text-lg text-amber-400"></i>
@@ -326,10 +326,10 @@
           <!-- Quick Stats Bar -->
           <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400 font-mono">
             <div>
-              SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">34</span> LOGGED DATA
+              SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">40</span> CLASSMATES
             </div>
             <div class="text-slate-500">
-              TOTAL CLASS RECORDS: <span id="totalClassRecords" class="text-slate-300 font-bold">34</span>
+              TOTAL CLASS RECORDS: <span id="totalClassRecords" class="text-slate-300 font-bold">40</span>
             </div>
           </div>
         </div>
@@ -362,10 +362,10 @@
               <span id="activeScrubDate" class="text-2xl font-vcr text-cyan-400 font-bold glow-cyan px-4 py-1 bg-slate-900 rounded border border-cyan-500/40">
                 AUG 18, 2026
               </span>
-              <span id="endScrubDate" class="text-xs font-vcr text-slate-400">EPISODE 11: SEP 16, 2026</span>
+              <span id="endScrubDate" class="text-xs font-vcr text-slate-400">EPISODE 12: SEP 21, 2026</span>
             </div>
 
-            <input type="range" id="dateScrubber" min="0" max="10" value="0" oninput="updateScrubber(this.value)" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400">
+            <input type="range" id="dateScrubber" min="0" max="11" value="0" oninput="updateScrubber(this.value)" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400">
 
             <!-- Date Buttons Fast Select -->
             <div id="datePillContainer" class="flex flex-wrap justify-center gap-2 mt-6">
@@ -406,7 +406,7 @@
               </div>
               <div>
                 <div class="text-xs text-slate-400 font-vcr uppercase">Total Unique Classmates</div>
-                <div id="kpiUniqueStudents" class="text-3xl font-bold font-vcr text-cyan-400 glow-cyan">34</div>
+                <div id="kpiUniqueStudents" class="text-3xl font-bold font-vcr text-cyan-400 glow-cyan">40</div>
               </div>
             </div>
 
@@ -416,7 +416,7 @@
               </div>
               <div>
                 <div class="text-xs text-slate-400 font-vcr uppercase">Total Vlog Cameos Logged</div>
-                <div id="kpiTotalLogs" class="text-3xl font-bold font-vcr text-emerald-400 glow-green">65</div>
+                <div id="kpiTotalLogs" class="text-3xl font-bold font-vcr text-emerald-400 glow-green">77</div>
               </div>
             </div>
 
@@ -438,7 +438,7 @@
               <h3 class="font-vcr text-lg text-cyan-400 flex items-center gap-2">
                 <i class="ph-bold ph-waveform"></i> DAILY VLOG CAMEO VOLUME SPECTRUM
               </h3>
-              <span id="chartDatesCount" class="text-xs text-slate-400 font-mono">11 CLASS DAYS</span>
+              <span id="chartDatesCount" class="text-xs text-slate-400 font-mono">12 CLASS DAYS</span>
             </div>
             <div class="h-64 relative">
               <canvas id="timelineChart"></canvas>
@@ -482,9 +482,9 @@
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-950/60 border border-amber-600/50 rounded-full text-amber-400 text-xs font-bold mb-2">
                   <i class="ph-bold ph-compass text-sm"></i> CLASS OF 2027 NEXT CHAPTER
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-vcr text-amber-400 tracking-wider">FUTURE OF 2027: UNIVERSITY DESTINATIONS</h2>
+                <h2 class="text-2xl sm:text-3xl font-vcr text-amber-400 tracking-wider">FUTURE OF 2027</h2>
                 <p class="text-sm text-slate-400 font-sans mt-1">
-                  Explore every higher education destination selected by senior classmates, along with the full list of attending students.
+                  Explore higher education destinations selected by senior classmates, along with attending students.
                 </p>
               </div>
 
@@ -542,9 +542,16 @@
             <span id="modalCount" class="text-cyan-400 font-bold text-base">5 Cameos</span>
           </div>
           <div class="flex justify-between items-center text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400">TARGET UNIVERSITY:</span>
+            <span class="text-slate-400">TARGET COLLEGE:</span>
             <span id="modalUniversity" class="text-amber-300 font-bold text-sm flex items-center gap-1.5">
               <i class="ph-bold ph-graduation-cap text-amber-400 text-base"></i>
+              <span>TBA</span>
+            </span>
+          </div>
+          <div class="flex justify-between items-center text-xs font-vcr pt-2 border-t border-slate-800/80">
+            <span class="text-slate-400">SENIOR SONG:</span>
+            <span id="modalSong" class="text-cyan-300 font-bold text-xs flex items-center gap-1.5 truncate max-w-[220px]">
+              <i class="ph-bold ph-music-notes text-cyan-400 text-base"></i>
               <span>TBA</span>
             </span>
           </div>
@@ -582,46 +589,46 @@
   <script>
     // Raw Dataset compiled from Senior Year Chromebook Class Vlog Logs
     let RAW_DATA = [
-      { name: "Nicholas Garcia", count: 2, university: "Texas A&M University", timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
-      { name: "Aaron Chapa", count: 6, university: "University of Dallas", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
-      { name: "Mathieu Birch", count: 2, university: "University of Texas at Austin", timestamps: ["Aug. 18, 2026", "Sep. 21, 2026"] },
-      { name: "Jose Alvarez", count: 3, university: "Texas A&M University", timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
-      { name: "Zoe Zaragoza", count: 2, university: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
-      { name: "Allegra Gonzalez", count: 1, university: "TBA", timestamps: ["Aug. 19, 2026"] },
-      { name: "Andres Chavarria", count: 1, university: "TBA", timestamps: ["Aug. 19, 2026"] },
-      { name: "Santiago Contreras", count: 2, university: "University of Texas at San Antonio", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
-      { name: "Felipe Rivera", count: 2, university: "University of Texas at Austin", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
-      { name: "Ava Farias", count: 2, university: "Texas A&M University", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
-      { name: "Kali Vazquez", count: 1, university: "TBA", timestamps: ["Aug. 19, 2026"] },
-      { name: "Montserrat Hernandez", count: 5, university: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
-      { name: "Matthew Montelongo", count: 2, university: "University of Texas at San Antonio", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
-      { name: "Walter Gonzalez", count: 5, university: "University of Texas at Austin", timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026"] },
-      { name: "Kimberly Saavedra", count: 5, university: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Sophia Garcia", count: 2, university: "TBA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
-      { name: "Justin Tanguma", count: 5, university: "Texas A&M University", timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
-      { name: "Enrique Paredes", count: 4, university: "Texas State University", timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Romina Castillo", count: 2, university: "TBA", timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
-      { name: "Rihanna Flores", count: 1, university: "University of Houston", timestamps: ["Sep. 01, 2026"] },
-      { name: "Israel Ramirez", count: 2, university: "University of Texas at Austin", timestamps: ["Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Monserrat Sanchez", count: 1, university: "University of Texas at San Antonio", timestamps: ["Sep. 01, 2026"] },
-      { name: "Keara Cruz", count: 1, university: "University of Texas at Austin", timestamps: ["Sep. 02, 2026"] },
-      { name: "Regina Sanchez", count: 1, university: "TBA", timestamps: ["Sep. 02, 2026"] },
-      { name: "Gianna Ortegon", count: 1, university: "University of Texas at San Antonio", timestamps: ["Sep. 02, 2026"] },
-      { name: "Aaron Trevino", count: 2, university: "University of Texas at San Antonio", timestamps: ["Sep. 02, 2026", "Sep. 21, 2026"] },
-      { name: "Juan-Carlos Garza", count: 1, university: "TBA", timestamps: ["Sep. 08, 2026"] },
-      { name: "Jose Ramos", count: 1, university: "TBA", timestamps: ["Sep. 11, 2026"] },
-      { name: "Cristian Montiel", count: 2, university: "TBA", timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
-      { name: "Diana Garcia", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
-      { name: "Mia Perez", count: 1, university: "Texas Christian University", timestamps: ["Sep. 14, 2026"] },
-      { name: "Mia Trevino", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
-      { name: "Santiago Vazquez", count: 1, university: "TBA", timestamps: ["Sep. 14, 2026"] },
-      { name: "Angeline Gutierrez", count: 2, university: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] },
-      { name: "Ricky Rodriguez", count: 1, university: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Eduardo Martinez", count: 1, university: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Diego Trad", count: 1, university: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Aaden Flores", count: 1, university: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Jorge Esquivel", count: 1, university: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Gael Martinez", count: 1, university: "TBA", timestamps: ["Sep. 21, 2026"] }
+      { name: "Nicholas Garcia", count: 2, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
+      { name: "Aaron Chapa", count: 6, university: "University of Dallas", song: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
+      { name: "Mathieu Birch", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 21, 2026"] },
+      { name: "Jose Alvarez", count: 3, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Zoe Zaragoza", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
+      { name: "Allegra Gonzalez", count: 1, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Andres Chavarria", count: 1, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Santiago Contreras", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
+      { name: "Felipe Rivera", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
+      { name: "Ava Farias", count: 2, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
+      { name: "Kali Vazquez", count: 1, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Montserrat Hernandez", count: 5, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
+      { name: "Matthew Montelongo", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
+      { name: "Walter Gonzalez", count: 5, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026"] },
+      { name: "Kimberly Saavedra", count: 5, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
+      { name: "Sophia Garcia", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Justin Tanguma", count: 5, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
+      { name: "Enrique Paredes", count: 4, university: "Texas State University", song: "TBA", timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
+      { name: "Romina Castillo", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
+      { name: "Rihanna Flores", count: 1, university: "University of Houston", song: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Israel Ramirez", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Sep. 01, 2026", "Sep. 21, 2026"] },
+      { name: "Monserrat Sanchez", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Keara Cruz", count: 1, university: "University of Texas at Austin", song: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Regina Sanchez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Gianna Ortegon", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Aaron Trevino", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 02, 2026", "Sep. 21, 2026"] },
+      { name: "Juan-Carlos Garza", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 08, 2026"] },
+      { name: "Jose Ramos", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 11, 2026"] },
+      { name: "Cristian Montiel", count: 2, university: "TBA", song: "TBA", timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
+      { name: "Diana Garcia", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Mia Perez", count: 1, university: "Texas Christian University", song: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Mia Trevino", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Santiago Vazquez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Angeline Gutierrez", count: 2, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] },
+      { name: "Ricky Rodriguez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Eduardo Martinez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Diego Trad", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Aaden Flores", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Jorge Esquivel", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Gael Martinez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] }
     ];
 
     // Unique list of dates in chronological order
@@ -695,7 +702,7 @@
       }
     }
 
-    // Helper function to get school badge branding (shortened name & official school colors)
+    // Helper function to get school badge branding
     function getSchoolBadge(university) {
       if (!university || university === "TBA") {
         return {
@@ -747,7 +754,6 @@
         };
       }
       
-      // Fallback auto-acronym for any other university name
       const acronym = university.replace(/University|College|of|at/gi, '').trim().split(/\s+/).map(w => w[0]).join('').toUpperCase() || 'COLLEGE';
       return {
         short: acronym,
@@ -759,7 +765,7 @@
     let audioEnabled = true;
     let crtEffectsEnabled = false;
     let audioCtx = null;
-    let currentVcrState = 'PLAY'; // PLAY, PAUSE, REWIND, FF
+    let currentVcrState = 'PLAY';
 
     function initAudio() {
       if (!audioCtx) {
@@ -792,7 +798,7 @@
       try {
         initAudio();
         const now = audioCtx.currentTime;
-        const bufferSize = audioCtx.sampleRate * 0.08; // 80ms white noise burst
+        const bufferSize = audioCtx.sampleRate * 0.08;
         const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
         const data = buffer.getChannelData(0);
         for (let i = 0; i < bufferSize; i++) {
@@ -977,7 +983,6 @@
       if (!container) return;
       container.innerHTML = '';
 
-      // Group students by target university
       const schoolsMap = {};
       RAW_DATA.forEach(st => {
         const univ = st.university || "TBA";
@@ -987,7 +992,6 @@
         schoolsMap[univ].push(st);
       });
 
-      // Sort schools: higher student count first, putting TBA at the end
       const schoolKeys = Object.keys(schoolsMap).sort((a, b) => {
         if (a === "TBA") return 1;
         if (b === "TBA") return -1;
@@ -997,7 +1001,6 @@
         return a.localeCompare(b);
       });
 
-      // Update Header Metrics
       const uniqueSchools = schoolKeys.filter(s => s !== "TBA").length;
       const tbaCount = (schoolsMap["TBA"] || []).length;
       const topSchool = schoolKeys.find(s => s !== "TBA") || "N/A";
@@ -1012,7 +1015,6 @@
       const kpiUndecided = document.getElementById('kpiUndecidedCount');
       if (kpiUndecided) kpiUndecided.textContent = tbaCount;
 
-      // Render School Cards
       schoolKeys.forEach(schoolName => {
         const students = schoolsMap[schoolName].sort((a, b) => a.name.localeCompare(b.name));
         const schoolBadge = getSchoolBadge(schoolName);
@@ -1062,7 +1064,6 @@
       const totalRecs = document.getElementById('totalClassRecords');
       if (totalRecs) totalRecs.textContent = RAW_DATA.length;
 
-      // KPI updates
       const totalLogs = RAW_DATA.reduce((acc, curr) => acc + curr.count, 0);
       const kpiUnique = document.getElementById('kpiUniqueStudents');
       if (kpiUnique) kpiUnique.textContent = RAW_DATA.length;
@@ -1071,7 +1072,6 @@
       const chartDates = document.getElementById('chartDatesCount');
       if (chartDates) chartDates.textContent = `${UNIQUE_DATES.length} CLASS DAYS`;
 
-      // Calculate busiest day
       let maxCount = 0;
       let busiestDay = "";
       UNIQUE_DATES.forEach(d => {
@@ -1181,6 +1181,11 @@
         univElem.querySelector('span').textContent = item.university || 'Undecided';
       }
 
+      const songElem = document.getElementById('modalSong');
+      if (songElem) {
+        songElem.querySelector('span').textContent = item.song || 'TBA';
+      }
+
       const rank = getRankInfo(item.count);
       const badgeElem = document.getElementById('modalRankBadge');
       badgeElem.className = `text-xs font-vcr px-2.5 py-1 rounded border inline-flex items-center gap-1.5 ${rank.class}`;
@@ -1213,9 +1218,13 @@
     function initScrubber() {
       const container = document.getElementById('datePillContainer');
       const scrubber = document.getElementById('dateScrubber');
+      const endScrubLabel = document.getElementById('endScrubDate');
       container.innerHTML = '';
 
       scrubber.max = UNIQUE_DATES.length - 1;
+      if (endScrubLabel && UNIQUE_DATES.length > 0) {
+        endScrubLabel.textContent = `EPISODE ${String(UNIQUE_DATES.length).padStart(2, '0')}: ${UNIQUE_DATES[UNIQUE_DATES.length - 1].toUpperCase()}`;
+      }
 
       UNIQUE_DATES.forEach((dateStr, idx) => {
         const btn = document.createElement('button');
@@ -1365,71 +1374,6 @@
         `;
 
         grid.appendChild(card);
-      });
-    }
-
-    function saveMemo(e) {
-      e.preventDefault();
-      const title = document.getElementById('memoTitle').value.trim();
-      const body = document.getElementById('memoBody').value.trim();
-
-      if (!title || !body) return;
-
-      const memos = JSON.parse(localStorage.getItem('chromebook_vhs_memos') || '[]');
-      const newMemo = {
-        id: Date.now(),
-        title,
-        body,
-        date: new Date().toLocaleDateString()
-      };
-      memos.unshift(newMemo);
-      localStorage.setItem('chromebook_vhs_memos', JSON.stringify(memos));
-
-      document.getElementById('memoTitle').value = '';
-      document.getElementById('memoBody').value = '';
-
-      playSynthBeep(900, 0.1);
-      renderMemos();
-    }
-
-    function deleteMemo(id) {
-      let memos = JSON.parse(localStorage.getItem('chromebook_vhs_memos') || '[]');
-      memos = memos.filter(m => m.id !== id);
-      localStorage.setItem('chromebook_vhs_memos', JSON.stringify(memos));
-      playSynthBeep(300, 0.08);
-      renderMemos();
-    }
-
-    function renderMemos() {
-      const container = document.getElementById('memoList');
-      const memos = JSON.parse(localStorage.getItem('chromebook_vhs_memos') || '[]');
-
-      if (memos.length === 0) {
-        container.innerHTML = `
-          <div class="text-center p-4 text-xs text-slate-500 font-mono">
-            No memo stickers attached yet. Record your first note above!
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = '';
-      memos.forEach(m => {
-        const item = document.createElement('div');
-        item.className = "bg-slate-950 p-3.5 rounded-lg border border-purple-900/40 flex items-start justify-between gap-3";
-        item.innerHTML = `
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-bold text-slate-200 text-sm font-mono">${m.title}</span>
-              <span class="text-[10px] text-purple-400 bg-purple-950 px-1.5 py-0.5 rounded border border-purple-800">${m.date}</span>
-            </div>
-            <p class="text-xs text-slate-400 mt-1 font-sans">${m.body}</p>
-          </div>
-          <button onclick="deleteMemo(${m.id})" class="text-slate-500 hover:text-red-400 text-base">
-            <i class="ph-bold ph-trash"></i>
-          </button>
-        `;
-        container.appendChild(item);
       });
     }
 
