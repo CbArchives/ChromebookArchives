@@ -278,7 +278,7 @@
     <nav class="flex flex-wrap items-center gap-2 mb-6">
       <button onclick="switchTab('archive')" id="tab-archive" class="nav-tab active-tab px-4 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold border border-cyan-400 flex items-center gap-2 text-sm transition shadow-lg shadow-cyan-500/20">
         <i class="ph-bold ph-cassette-tape text-lg"></i>
-        PROFILE TAPES (<span id="totalStudentsBadge">40</span>)
+        PROFILE TAPES (<span id="totalStudentsBadge">41</span>)
       </button>
       <button onclick="switchTab('seek')" id="tab-seek" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-video-camera text-lg text-amber-400"></i>
@@ -326,10 +326,10 @@
           <!-- Quick Stats Bar -->
           <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400 font-mono">
             <div>
-              SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">40</span> CLASSMATES
+              SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">41</span> CLASSMATES
             </div>
             <div class="text-slate-500">
-              TOTAL CLASS RECORDS: <span id="totalClassRecords" class="text-slate-300 font-bold">40</span>
+              TOTAL CLASS RECORDS: <span id="totalClassRecords" class="text-slate-300 font-bold">41</span>
             </div>
           </div>
         </div>
@@ -406,7 +406,7 @@
               </div>
               <div>
                 <div class="text-xs text-slate-400 font-vcr uppercase">Total Unique Classmates</div>
-                <div id="kpiUniqueStudents" class="text-3xl font-bold font-vcr text-cyan-400 glow-cyan">40</div>
+                <div id="kpiUniqueStudents" class="text-3xl font-bold font-vcr text-cyan-400 glow-cyan">41</div>
               </div>
             </div>
 
@@ -416,7 +416,7 @@
               </div>
               <div>
                 <div class="text-xs text-slate-400 font-vcr uppercase">Total Vlog Cameos Logged</div>
-                <div id="kpiTotalLogs" class="text-3xl font-bold font-vcr text-emerald-400 glow-green">77</div>
+                <div id="kpiTotalLogs" class="text-3xl font-bold font-vcr text-emerald-400 glow-green">80</div>
               </div>
             </div>
 
@@ -548,11 +548,11 @@
               <span>TBA</span>
             </span>
           </div>
-          <div class="flex justify-between items-center text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400">SENIOR SONG:</span>
-            <span id="modalSong" class="text-cyan-300 font-bold text-xs flex items-center gap-1.5 truncate max-w-[220px]">
-              <i class="ph-bold ph-music-notes text-cyan-400 text-base"></i>
-              <span>TBA</span>
+          <div class="flex justify-between items-start gap-2 text-xs font-vcr pt-2 border-t border-slate-800/80">
+            <span class="text-slate-400 shrink-0">SENIOR SONG:</span>
+            <span id="modalSong" class="text-cyan-300 font-bold text-xs flex items-center justify-end gap-1.5 text-right min-w-0 break-words leading-tight">
+              <i class="ph-bold ph-music-notes text-cyan-400 text-base shrink-0"></i>
+              <span class="break-words">TBA</span>
             </span>
           </div>
         </div>
@@ -590,12 +590,12 @@
     // Raw Dataset compiled from Senior Year Chromebook Class Vlog Logs
     let RAW_DATA = [
       { name: "Nicholas Garcia", count: 2, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
-      { name: "Aaron Chapa", count: 6, university: "University of Dallas", song: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
+      { name: "Aaron Chapa", count: 6, university: "University of Dallas", song: "Don't Go (Roger That Remix) - Julie McDermott", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
       { name: "Mathieu Birch", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 21, 2026"] },
       { name: "Jose Alvarez", count: 3, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
       { name: "Zoe Zaragoza", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
-      { name: "Allegra Gonzalez", count: 1, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026"] },
-      { name: "Andres Chavarria", count: 1, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Allegra Gonzalez", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Andres Chavarria", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026"] },
       { name: "Santiago Contreras", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
       { name: "Felipe Rivera", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
       { name: "Ava Farias", count: 2, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
@@ -604,7 +604,7 @@
       { name: "Matthew Montelongo", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
       { name: "Walter Gonzalez", count: 5, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026"] },
       { name: "Kimberly Saavedra", count: 5, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Sophia Garcia", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Sophia Garcia", count: 2, university: "University of Texas at San Antonio", song: "Good Days - SZA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
       { name: "Justin Tanguma", count: 5, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
       { name: "Enrique Paredes", count: 4, university: "Texas State University", song: "TBA", timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
       { name: "Romina Castillo", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
@@ -615,11 +615,11 @@
       { name: "Regina Sanchez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 02, 2026"] },
       { name: "Gianna Ortegon", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 02, 2026"] },
       { name: "Aaron Trevino", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 02, 2026", "Sep. 21, 2026"] },
-      { name: "Juan-Carlos Garza", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 08, 2026"] },
-      { name: "Jose Ramos", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 11, 2026"] },
+      { name: "Juan-Carlos Garza", count: 1, university: "TBA", song: "Grandeur (\"Black Clover\") - Studio Yuraki", timestamps: ["Sep. 08, 2026"] },
+      { name: "Jose Ramos", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 11, 2026"] },
       { name: "Cristian Montiel", count: 2, university: "TBA", song: "TBA", timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
-      { name: "Diana Garcia", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
-      { name: "Mia Perez", count: 1, university: "Texas Christian University", song: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Diana Garcia", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 22, 2026"] },
+      { name: "Mia Perez", count: 2, university: "Texas Christian University", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 22, 2026"] },
       { name: "Mia Trevino", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
       { name: "Santiago Vazquez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
       { name: "Angeline Gutierrez", count: 2, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] },
@@ -628,14 +628,16 @@
       { name: "Diego Trad", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
       { name: "Aaden Flores", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
       { name: "Jorge Esquivel", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Gael Martinez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] }
+      { name: "Gael Martinez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Giada Peña", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 22, 2026"] }
     ];
 
     // Unique list of dates in chronological order
     let UNIQUE_DATES = [
       "Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Aug. 28, 2026",
       "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 08, 2026",
-      "Sep. 11, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026"
+      "Sep. 11, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026",
+      "Sep. 22, 2026"
     ];
 
     // Load persisted data if present
@@ -1183,7 +1185,10 @@
 
       const songElem = document.getElementById('modalSong');
       if (songElem) {
-        songElem.querySelector('span').textContent = item.song || 'TBA';
+        const formattedSong = (item.song || 'TBA').replace(/\s+by\s+/gi, ' - ');
+        const targetSpan = songElem.querySelector('span');
+        if (targetSpan) targetSpan.textContent = formattedSong;
+        songElem.setAttribute('title', formattedSong);
       }
 
       const rank = getRankInfo(item.count);
