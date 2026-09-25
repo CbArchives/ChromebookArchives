@@ -543,6 +543,13 @@
               <span class="break-words">TBA</span>
             </span>
           </div>
+          <div class="flex justify-between items-start gap-2 text-xs font-vcr pt-2 border-t border-slate-800/80">
+            <span class="text-slate-400 shrink-0">SENIOR MOVIE:</span>
+            <span id="modalMovie" class="text-purple-300 font-bold text-xs flex items-center justify-end gap-1.5 text-right min-w-0 break-words leading-tight">
+              <i class="ph-bold ph-film-strip text-purple-400 text-base shrink-0"></i>
+              <span class="break-words">TBA</span>
+            </span>
+          </div>
         </div>
 
         <div>
@@ -577,47 +584,48 @@
   <script>
     // Raw Dataset compiled from Senior Year Chromebook Class Vlog Logs
     let RAW_DATA = [
-      { name: "Nicholas Garcia", count: 2, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
-      { name: "Aaron Chapa", count: 6, university: "University of Dallas", song: "Tried Our Best - Drake", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
-      { name: "Mathieu Birch", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 21, 2026"] },
-      { name: "Jose Alvarez", count: 3, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
-      { name: "Zoe Zaragoza", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
-      { name: "Allegra Gonzalez", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026"] },
-      { name: "Andres Chavarria", count: 1, university: "University of Texas at San Antonio", song: "Shabang - Drake", timestamps: ["Aug. 19, 2026"] },
-      { name: "Santiago Contreras", count: 2, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
-      { name: "Felipe Rivera", count: 2, university: "University of Texas at Austin", song: "Me Paseo - Victor Mendivil & Óscar Maydon", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
-      { name: "Ava Farias", count: 2, university: "Texas A&M University", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
-      { name: "Kali Vazquez", count: 1, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026"] },
-      { name: "Montserrat Hernandez", count: 5, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
-      { name: "Matthew Montelongo", count: 2, university: "University of Texas at San Antonio", song: "In & Out - Lud Foe", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
-      { name: "Walter Gonzalez", count: 5, university: "University of Texas at Austin", song: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026"] },
-      { name: "Kimberly Saavedra", count: 5, university: "TBA", song: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Sophia Garcia", count: 2, university: "University of Texas at San Antonio", song: "Good Days - SZA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
-      { name: "Justin Tanguma", count: 5, university: "Texas A&M University", song: "Big Guy - Ice Spice", timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
-      { name: "Enrique Paredes", count: 4, university: "Texas State University", song: "Do What I Want - Lil Uzi Vert", timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Romina Castillo", count: 2, university: "TBA", song: "TBA", timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
-      { name: "Rihanna Flores", count: 1, university: "University of Houston", song: "TBA", timestamps: ["Sep. 01, 2026"] },
-      { name: "Israel Ramirez", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Sep. 01, 2026", "Sep. 21, 2026"] },
-      { name: "Monserrat Sanchez", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 01, 2026"] },
-      { name: "Keara Cruz", count: 1, university: "University of Texas at Austin", song: "TBA", timestamps: ["Sep. 02, 2026"] },
-      { name: "Regina Sanchez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 02, 2026"] },
-      { name: "Gianna Ortegon", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 02, 2026"] },
-      { name: "Aaron Trevino", count: 2, university: "University of Texas at San Antonio", song: "We Are Charlie Kirk - Spalexma", timestamps: ["Sep. 02, 2026", "Sep. 21, 2026"] },
-      { name: "Juan-Carlos Garza", count: 1, university: "TBA", song: "Grandeur (\"Black Clover\") - Studio Yuraki", timestamps: ["Sep. 08, 2026"] },
-      { name: "Jose Ramos", count: 1, university: "University of Texas at San Antonio", song: "TBA", timestamps: ["Sep. 11, 2026"] },
-      { name: "Cristian Montiel", count: 2, university: "TBA", song: "TBA", timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
-      { name: "Diana Garcia", count: 2, university: "University of Texas at Austin", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 22, 2026"] },
-      { name: "Mia Perez", count: 2, university: "Texas Christian University", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 22, 2026"] },
-      { name: "Mia Trevino", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
-      { name: "Santiago Vazquez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026"] },
-      { name: "Angeline Gutierrez", count: 2, university: "TBA", song: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] },
-      { name: "Ricky Rodriguez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Eduardo Martinez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Diego Trad", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Aaden Flores", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Jorge Esquivel", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Gael Martinez", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 21, 2026"] },
-      { name: "Giada Peña", count: 1, university: "TBA", song: "TBA", timestamps: ["Sep. 22, 2026"] }
+      { name: "Nicholas Garcia", count: 2, university: "Texas A&M University", song: "TBA", movie: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 16, 2026"] },
+      { name: "Aaron Chapa", count: 6, university: "University of Dallas", song: "TBA", movie: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Sep. 08, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
+      { name: "Mathieu Birch", count: 2, university: "University of Texas at Austin", song: "TBA", movie: "TBA", timestamps: ["Aug. 18, 2026", "Sep. 21, 2026"] },
+      { name: "Jose Alvarez", count: 3, university: "Texas A&M University", song: "TBA", movie: "TBA", timestamps: ["Aug. 18, 2026", "Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Zoe Zaragoza", count: 2, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 11, 2026"] },
+      { name: "Allegra Gonzalez", count: 1, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Andres Chavarria", count: 1, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Santiago Contreras", count: 2, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
+      { name: "Felipe Rivera", count: 2, university: "University of Texas at Austin", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
+      { name: "Ava Farias", count: 2, university: "Texas A&M University", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 14, 2026"] },
+      { name: "Kali Vazquez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026"] },
+      { name: "Montserrat Hernandez", count: 5, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026"] },
+      { name: "Matthew Montelongo", count: 2, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 16, 2026"] },
+      { name: "Walter Gonzalez", count: 5, university: "University of Texas at Austin", song: "TBA", movie: "TBA", timestamps: ["Aug. 19, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026"] },
+      { name: "Kimberly Saavedra", count: 5, university: "TBA", song: "One of These Nights by Eagles", movie: "Up", timestamps: ["Aug. 19, 2026", "Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
+      { name: "Sophia Garcia", count: 2, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Aug. 25, 2026", "Sep. 08, 2026"] },
+      { name: "Justin Tanguma", count: 5, university: "Texas A&M University", song: "TBA", movie: "TBA", timestamps: ["Aug. 28, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 14, 2026", "Sep. 21, 2026"] },
+      { name: "Enrique Paredes", count: 4, university: "Texas State University", song: "TBA", movie: "TBA", timestamps: ["Aug. 28, 2026", "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 21, 2026"] },
+      { name: "Romina Castillo", count: 2, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Aug. 31, 2026", "Sep. 01, 2026"] },
+      { name: "Rihanna Flores", count: 1, university: "University of Houston", song: "TBA", movie: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Israel Ramirez", count: 2, university: "University of Texas at Austin", song: "TBA", movie: "TBA", timestamps: ["Sep. 01, 2026", "Sep. 21, 2026"] },
+      { name: "Monserrat Sanchez", count: 1, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Sep. 01, 2026"] },
+      { name: "Keara Cruz", count: 2, university: "University of Texas at Austin", song: "Harvest Moon by Neil Young", movie: "27 Dresses", timestamps: ["Sep. 02, 2026", "Sep. 24, 2026"] },
+      { name: "Regina Sanchez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Gianna Ortegon", count: 1, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Sep. 02, 2026"] },
+      { name: "Aaron Trevino", count: 2, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Sep. 02, 2026", "Sep. 21, 2026"] },
+      { name: "Juan-Carlos Garza", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 08, 2026"] },
+      { name: "Jose Ramos", count: 1, university: "University of Texas at San Antonio", song: "TBA", movie: "TBA", timestamps: ["Sep. 11, 2026"] },
+      { name: "Cristian Montiel", count: 2, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 11, 2026", "Sep. 14, 2026"] },
+      { name: "Diana Garcia", count: 2, university: "University of Texas at Austin", song: "TBA", movie: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 22, 2026"] },
+      { name: "Mia Perez", count: 2, university: "Texas Christian University", song: "TBA", movie: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 22, 2026"] },
+      { name: "Mia Trevino", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Santiago Vazquez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 14, 2026"] },
+      { name: "Angeline Gutierrez", count: 2, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 14, 2026", "Sep. 16, 2026"] },
+      { name: "Ricky Rodriguez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Eduardo Martinez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Diego Trad", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Aaden Flores", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Jorge Esquivel", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Gael Martinez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
+      { name: "Giada Peña", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 22, 2026"] },
+      { name: "Arabella De Sousa", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 24, 2026"] }
     ];
 
     // Unique list of dates in chronological order
@@ -625,7 +633,7 @@
       "Aug. 18, 2026", "Aug. 19, 2026", "Aug. 25, 2026", "Aug. 28, 2026",
       "Aug. 31, 2026", "Sep. 01, 2026", "Sep. 02, 2026", "Sep. 08, 2026",
       "Sep. 11, 2026", "Sep. 14, 2026", "Sep. 16, 2026", "Sep. 21, 2026",
-      "Sep. 22, 2026"
+      "Sep. 22, 2026", "Sep. 24, 2026"
     ];
 
     // Load persisted data if present
@@ -1077,7 +1085,9 @@
       let filtered = RAW_DATA.filter(item => {
         const matchesSearch = item.name.toLowerCase().includes(searchVal) || 
                               item.timestamps.some(t => t.toLowerCase().includes(searchVal)) ||
-                              (item.university && item.university.toLowerCase().includes(searchVal));
+                              (item.university && item.university.toLowerCase().includes(searchVal)) ||
+                              (item.song && item.song.toLowerCase().includes(searchVal)) ||
+                              (item.movie && item.movie.toLowerCase().includes(searchVal));
         return matchesSearch;
       });
 
@@ -1170,6 +1180,14 @@
         const targetSpan = songElem.querySelector('span');
         if (targetSpan) targetSpan.textContent = formattedSong;
         songElem.setAttribute('title', formattedSong);
+      }
+
+      const movieElem = document.getElementById('modalMovie');
+      if (movieElem) {
+        const formattedMovie = item.movie || 'TBA';
+        const targetSpan = movieElem.querySelector('span');
+        if (targetSpan) targetSpan.textContent = formattedMovie;
+        movieElem.setAttribute('title', formattedMovie);
       }
 
       const rank = getRankInfo(item.count);
