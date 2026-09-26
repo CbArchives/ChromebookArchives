@@ -300,6 +300,32 @@
       <!-- ================= SECTION 1: TAPE ARCHIVE ================= -->
       <section id="view-archive" class="tab-content block">
         
+        <!-- Profile Tab Header & Info Banner -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-6 shadow-xl relative overflow-hidden">
+          <div class="flex flex-col items-center text-center gap-4">
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-vcr text-cyan-400 tracking-wider">
+                CLASSMATE PROFILES
+              </h2>
+              <p class="text-sm text-slate-300 font-sans mt-2 leading-relaxed max-w-3xl mx-auto">
+                Find information on everyone who has made an appearance in the vlog throughout our senior year. Click any tape below to view their total appearance count, target college or university, and favorite media (favorite song & movie).
+              </p>
+              
+              <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs font-sans">
+                <button onclick="switchTab('stats')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/40 text-amber-300 hover:bg-amber-500/20 transition">
+                  <i class="ph-bold ph-trophy text-amber-400 text-sm"></i>
+                  <span>Looking for rank information? Visit the <strong>Data Center</strong> tab for the full rank leaderboard!</span>
+                </button>
+
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-950/60 border border-red-700/60 text-red-300">
+                  <i class="ph-bold ph-user-minus text-red-400 text-sm"></i>
+                  <span><strong>Notice:</strong> If you don't want to be in the vlog, please talk to me to be removed!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Search & Sort Toolbar -->
         <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 mb-6 space-y-4">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -537,14 +563,14 @@
             </span>
           </div>
           <div class="flex justify-between items-start gap-2 text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400 shrink-0">SENIOR SONG:</span>
+            <span class="text-slate-400 shrink-0">FAVORITE SONG:</span>
             <span id="modalSong" class="text-cyan-300 font-bold text-xs flex items-center justify-end gap-1.5 text-right min-w-0 break-words leading-tight">
               <i class="ph-bold ph-music-notes text-cyan-400 text-base shrink-0"></i>
               <span class="break-words">TBA</span>
             </span>
           </div>
           <div class="flex justify-between items-start gap-2 text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400 shrink-0">SENIOR MOVIE:</span>
+            <span class="text-slate-400 shrink-0">FAVORITE MOVIE:</span>
             <span id="modalMovie" class="text-purple-300 font-bold text-xs flex items-center justify-end gap-1.5 text-right min-w-0 break-words leading-tight">
               <i class="ph-bold ph-film-strip text-purple-400 text-base shrink-0"></i>
               <span class="break-words">TBA</span>
@@ -1202,13 +1228,10 @@
 
       item.timestamps.forEach((ts, idx) => {
         const li = document.createElement('li');
-        li.className = "bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center justify-between text-xs font-mono";
+        li.className = "bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2 text-xs font-mono";
         li.innerHTML = `
-          <div class="flex items-center gap-2">
-            <span class="w-5 h-5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 flex items-center justify-center font-vcr text-xs font-bold">${idx + 1}</span>
-            <span class="text-slate-200">${ts}</span>
-          </div>
-          <span class="text-emerald-400 font-vcr">FEATURED ▶</span>
+          <span class="w-5 h-5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 flex items-center justify-center font-vcr text-xs font-bold">${idx + 1}</span>
+          <span class="text-slate-200">${ts}</span>
         `;
         list.appendChild(li);
       });
