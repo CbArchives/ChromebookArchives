@@ -651,7 +651,7 @@
       { name: "Jorge Esquivel", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
       { name: "Gael Martinez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 21, 2026"] },
       { name: "Giada Peña", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 22, 2026"] },
-      { name: "Arabella De Sousa", count: 1, university: "TBA", song: "cliche by 2hollis", movie: "Wicked", timestamps: ["Sep. 24, 2026"] },
+      { name: "Arabella De Sousa", count: 1, university: "University of Pittsburgh", song: "cliche by 2hollis", movie: "Wicked", timestamps: ["Sep. 24, 2026"] },
       { name: "Juan Jimenez", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 25, 2026"] },
       { name: "Amelie Montante", count: 1, university: "TBA", song: "TBA", movie: "TBA", timestamps: ["Sep. 25, 2026"] }
     ];
@@ -686,44 +686,44 @@
       if (count > 0 && count === topCount) {
         return { 
           name: 'Valedictorian', 
-          class: 'bg-yellow-500/20 text-yellow-300 border-yellow-400 glow-amber', 
+          class: 'bg-yellow-950/90 text-yellow-300 border-yellow-400 glow-amber', 
           icon: '🎓',
-          badgeClass: 'bg-yellow-950 text-yellow-300 border-yellow-500'
+          badgeClass: 'bg-yellow-950 text-yellow-300 border-yellow-400'
         };
       } else if (count > 0 && count === secondCount) {
         return { 
           name: 'Diamond', 
-          class: 'bg-cyan-500/20 text-cyan-300 border-cyan-400 glow-cyan', 
+          class: 'bg-cyan-950/90 text-cyan-300 border-cyan-400 glow-cyan', 
           icon: '💎',
-          badgeClass: 'bg-cyan-950 text-cyan-300 border-cyan-500'
+          badgeClass: 'bg-cyan-950 text-cyan-300 border-cyan-400'
         };
       } else if (count > 0 && count === thirdCount) {
         return { 
           name: 'Gold', 
-          class: 'bg-amber-600/20 text-amber-400 border-amber-500', 
+          class: 'bg-amber-950/90 text-amber-400 border-amber-500', 
           icon: '🥇',
-          badgeClass: 'bg-amber-950 text-amber-400 border-amber-600'
+          badgeClass: 'bg-amber-950 text-amber-400 border-amber-500'
         };
       } else if (count > 0 && count === fourthCount) {
         return { 
           name: 'Silver', 
-          class: 'bg-slate-300/20 text-slate-200 border-slate-300', 
+          class: 'bg-slate-900/90 text-slate-200 border-slate-300', 
           icon: '🥈',
-          badgeClass: 'bg-slate-800 text-slate-200 border-slate-400'
+          badgeClass: 'bg-slate-800 text-slate-200 border-slate-300'
         };
       } else if (count > 0 && count === fifthCount) {
         return { 
           name: 'Bronze', 
-          class: 'bg-amber-800/30 text-amber-500 border-amber-700', 
+          class: 'bg-amber-950/90 text-amber-500 border-amber-600', 
           icon: '🥉',
-          badgeClass: 'bg-amber-950 text-amber-500 border-amber-800'
+          badgeClass: 'bg-amber-950 text-amber-500 border-amber-600'
         };
       } else {
         return { 
           name: 'Unranked', 
-          class: 'bg-slate-800/80 text-slate-400 border-slate-700', 
+          class: 'bg-slate-900/80 text-slate-400 border-slate-700', 
           icon: '⚪',
-          badgeClass: 'bg-slate-900 text-slate-400 border-slate-800'
+          badgeClass: 'bg-slate-900 text-slate-400 border-slate-700'
         };
       }
     }
@@ -733,57 +733,63 @@
       if (!university || university === "TBA") {
         return {
           short: "TBA",
-          class: "bg-slate-800/80 text-slate-400 border-slate-700"
+          class: "bg-slate-800 text-slate-300 border-slate-600"
         };
       }
       const u = university.toLowerCase();
       if (u.includes("austin")) {
         return {
           short: "UT",
-          class: "bg-[#BF5700]/30 text-[#FF9D42] border-[#BF5700] glow-amber"
+          class: "bg-[#BF5700] text-white border-white"
         };
       }
       if (u.includes("san antonio") || u.includes("utsa")) {
         return {
           short: "UTSA",
-          class: "bg-[#0C2340] text-[#F15A22] border-[#F15A22]/80"
+          class: "bg-[#0C2340] text-[#F15A22] border-[#F15A22]"
         };
       }
       if (u.includes("a&m") || u.includes("tam")) {
         return {
           short: "A&M",
-          class: "bg-[#500000]/90 text-[#FFC0C0] border-[#800000]"
+          class: "bg-[#500000] text-white border-white"
         };
       }
       if (u.includes("dallas")) {
         return {
           short: "UD",
-          class: "bg-[#002855] text-[#EAAA00] border-[#EAAA00]/80"
+          class: "bg-[#002855] text-[#EAAA00] border-[#EAAA00]"
         };
       }
       if (u.includes("houston")) {
         return {
           short: "UH",
-          class: "bg-[#C8102E]/90 text-white border-[#900C22] glow-red"
+          class: "bg-[#C8102E] text-white border-white"
         };
       }
       if (u.includes("christian") || u.includes("tcu")) {
         return {
           short: "TCU",
-          class: "bg-[#4D1979]/90 text-purple-200 border-purple-400"
+          class: "bg-[#4D1979] text-white border-white"
         };
       }
       if (u.includes("texas state") || u.includes("txst")) {
         return {
           short: "TXST",
-          class: "bg-[#501214]/90 text-[#D0B783] border-[#8D734A]"
+          class: "bg-[#501214] text-[#D0B783] border-[#D0B783]"
+        };
+      }
+      if (u.includes("pittsburgh") || u.includes("pitt")) {
+        return {
+          short: "PITT",
+          class: "bg-[#003594] text-[#FFB81C] border-[#FFB81C]"
         };
       }
       
       const acronym = university.replace(/University|College|of|at/gi, '').trim().split(/\s+/).map(w => w[0]).join('').toUpperCase() || 'COLLEGE';
       return {
         short: acronym,
-        class: "bg-cyan-950/80 text-cyan-300 border-cyan-700/80"
+        class: "bg-cyan-950 text-cyan-200 border-cyan-400"
       };
     }
 
