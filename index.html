@@ -478,9 +478,9 @@
               <div class="flex flex-wrap items-center gap-2 text-xs font-vcr">
                 <span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-300 border border-yellow-400">🎓 Valedictorian (1st)</span>
                 <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400">💎 Diamond (2nd)</span>
-                <span class="px-2 py-0.5 rounded bg-amber-600/20 text-amber-400 border border-amber-500">🥇 Gold (3rd)</span>
+                <span class="px-2 py-0.5 rounded bg-yellow-500/30 text-yellow-400 border border-yellow-400 font-bold">🥇 Gold (3rd)</span>
                 <span class="px-2 py-0.5 rounded bg-slate-300/20 text-slate-200 border border-slate-300">🥈 Silver (4th)</span>
-                <span class="px-2 py-0.5 rounded bg-amber-800/30 text-amber-500 border border-amber-700">🥉 Bronze (5th)</span>
+                <span class="px-2 py-0.5 rounded bg-amber-950/60 text-amber-600 border border-amber-800">🥉 Bronze (5th)</span>
               </div>
             </div>
 
@@ -686,37 +686,37 @@
       if (count > 0 && count === topCount) {
         return { 
           name: 'Valedictorian', 
-          class: 'bg-yellow-950/90 text-yellow-300 border-yellow-400 glow-amber', 
+          class: 'bg-yellow-500/20 text-yellow-300 border-yellow-400 glow-amber', 
           icon: '🎓',
-          badgeClass: 'bg-yellow-950 text-yellow-300 border-yellow-400'
+          badgeClass: 'bg-yellow-500/20 text-yellow-300 border-yellow-400'
         };
       } else if (count > 0 && count === secondCount) {
         return { 
           name: 'Diamond', 
-          class: 'bg-cyan-950/90 text-cyan-300 border-cyan-400 glow-cyan', 
+          class: 'bg-cyan-500/20 text-cyan-300 border-cyan-400 glow-cyan', 
           icon: '💎',
-          badgeClass: 'bg-cyan-950 text-cyan-300 border-cyan-400'
+          badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-400'
         };
       } else if (count > 0 && count === thirdCount) {
         return { 
           name: 'Gold', 
-          class: 'bg-amber-950/90 text-amber-400 border-amber-500', 
+          class: 'bg-yellow-500/30 text-yellow-400 border-yellow-400 glow-amber', 
           icon: '🥇',
-          badgeClass: 'bg-amber-950 text-amber-400 border-amber-500'
+          badgeClass: 'bg-yellow-500/30 text-yellow-400 border-yellow-400'
         };
       } else if (count > 0 && count === fourthCount) {
         return { 
           name: 'Silver', 
-          class: 'bg-slate-900/90 text-slate-200 border-slate-300', 
+          class: 'bg-slate-300/20 text-slate-200 border-slate-300', 
           icon: '🥈',
-          badgeClass: 'bg-slate-800 text-slate-200 border-slate-300'
+          badgeClass: 'bg-slate-300/20 text-slate-200 border-slate-300'
         };
       } else if (count > 0 && count === fifthCount) {
         return { 
           name: 'Bronze', 
-          class: 'bg-amber-950/90 text-amber-500 border-amber-600', 
+          class: 'bg-amber-950/60 text-amber-600 border-amber-800', 
           icon: '🥉',
-          badgeClass: 'bg-amber-950 text-amber-500 border-amber-600'
+          badgeClass: 'bg-amber-950/60 text-amber-600 border-amber-800'
         };
       } else {
         return { 
@@ -1370,9 +1370,9 @@
       const ranksToDisplay = [
         { key: 'Valedictorian', title: '🎓 Valedictorian Tier', colorClass: 'border-yellow-500/50 bg-yellow-950/20 text-yellow-300' },
         { key: 'Diamond', title: '💎 Diamond Tier', colorClass: 'border-cyan-500/50 bg-cyan-950/20 text-cyan-300' },
-        { key: 'Gold', title: '🥇 Gold Tier', colorClass: 'border-amber-600/50 bg-amber-950/20 text-amber-400' },
+        { key: 'Gold', title: '🥇 Gold Tier', colorClass: 'border-yellow-500/70 bg-yellow-950/40 text-yellow-400' },
         { key: 'Silver', title: '🥈 Silver Tier', colorClass: 'border-slate-300/50 bg-slate-800/30 text-slate-200' },
-        { key: 'Bronze', title: '🥉 Bronze Tier', colorClass: 'border-amber-700/50 bg-amber-950/30 text-amber-500' },
+        { key: 'Bronze', title: '🥉 Bronze Tier', colorClass: 'border-amber-800/70 bg-orange-950/40 text-amber-600' },
         { key: 'Unranked', title: '⚪ Unranked Tier', colorClass: 'border-slate-800 bg-slate-950/40 text-slate-400' }
       ];
 
