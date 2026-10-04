@@ -22,7 +22,7 @@
   <style>
     body {
       background-color: #0c0d12;
-      color: #e2e8f0;
+      color: #ffffff;
       font-family: 'Share Tech Mono', monospace;
       overflow-x: hidden;
     }
@@ -204,12 +204,12 @@
 
           <!-- Audio & CRT Effects Toggles -->
           <div class="flex items-center space-x-2 bg-slate-950 p-1.5 rounded-lg border border-slate-800">
-            <button id="audioToggleBtn" onclick="toggleAudio()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-cyan-300 transition flex items-center gap-1 text-xs" title="Toggle Synth Sound Effects">
+            <button id="audioToggleBtn" onclick="toggleAudio()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-white hover:text-cyan-300 transition flex items-center gap-1 text-xs" title="Toggle Synth Sound Effects">
               <i id="audioIcon" class="ph-bold ph-speaker-high text-cyan-400"></i>
               <span id="audioLabel" class="hidden sm:inline">Sound FX: ON</span>
             </button>
-            <button id="crtToggleBtn" onclick="toggleCRT()" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-slate-400 border border-slate-700 transition text-xs flex items-center gap-1" title="Toggle VHS Static Lines & CRT Scanlines Screen Effects">
-              <i id="crtIcon" class="ph-bold ph-television-simple text-slate-500"></i>
+            <button id="crtToggleBtn" onclick="toggleCRT()" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 transition text-xs flex items-center gap-1" title="Toggle VHS Static Lines & CRT Scanlines Screen Effects">
+              <i id="crtIcon" class="ph-bold ph-television-simple text-white"></i>
               <span id="crtLabel" class="hidden sm:inline">STATIC FX: OFF</span>
             </button>
           </div>
@@ -221,16 +221,16 @@
       <!-- VCR Physical Deck Navigation Buttons -->
       <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2">
         <div class="flex items-center space-x-1 sm:space-x-2">
-          <button onclick="vcrRewind()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-cyan-600 rounded text-xs font-bold text-slate-200 flex items-center gap-1 border border-slate-700 transition">
+          <button onclick="vcrRewind()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-cyan-600 rounded text-xs font-bold text-white flex items-center gap-1 border border-slate-700 transition">
             <i class="ph-bold ph-rewind"></i> REW
           </button>
           <button onclick="vcrPlay()" class="px-3 py-1.5 bg-emerald-900/60 hover:bg-emerald-800 active:bg-emerald-600 text-emerald-300 rounded text-xs font-bold flex items-center gap-1 border border-emerald-700/50 transition">
             <i class="ph-bold ph-play"></i> PLAY
           </button>
-          <button onclick="vcrPause()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-amber-600 rounded text-xs font-bold text-slate-200 flex items-center gap-1 border border-slate-700 transition">
+          <button onclick="vcrPause()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-amber-600 rounded text-xs font-bold text-white flex items-center gap-1 border border-slate-700 transition">
             <i class="ph-bold ph-pause"></i> PAUSE
           </button>
-          <button onclick="vcrFastForward()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-cyan-600 rounded text-xs font-bold text-slate-200 flex items-center gap-1 border border-slate-700 transition">
+          <button onclick="vcrFastForward()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 active:bg-cyan-600 rounded text-xs font-bold text-white flex items-center gap-1 border border-slate-700 transition">
             <i class="ph-bold ph-fast-forward"></i> FF
           </button>
         </div>
@@ -247,11 +247,11 @@
               <span>WATCH CHROMEBOOK ARCHIVES: SENIOR YEAR TEASER TRAILER</span>
             </div>
             <div class="flex items-center gap-2">
-              <a href="https://www.youtube.com/watch?v=XyxMqSQFJJY" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-red-950 hover:bg-red-900 border border-red-700/60 text-red-300 transition flex items-center gap-1.5 text-[11px] font-bold">
+              <a href="https://www.youtube.com/watch?v=XyxMqSQFJJY" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-red-950 hover:bg-red-900 border border-red-700/60 text-white transition flex items-center gap-1.5 text-[11px] font-bold">
                 <i class="ph-bold ph-youtube-logo text-red-500 text-sm"></i>
                 <span>Watch on YouTube</span>
               </a>
-              <button onclick="toggleTrailerScreen()" id="trailerToggleBtn" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition text-[11px] border border-slate-700 flex items-center gap-1 font-bold">
+              <button onclick="toggleTrailerScreen()" id="trailerToggleBtn" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-white transition text-[11px] border border-slate-700 flex items-center gap-1 font-bold">
                 <i id="trailerToggleIcon" class="ph-bold ph-caret-up"></i>
                 <span id="trailerToggleText">MINIMIZE</span>
               </button>
@@ -280,15 +280,15 @@
         <i class="ph-bold ph-cassette-tape text-lg text-cyan-400"></i>
         CLASSMATE PROFILES
       </button>
-      <button onclick="switchTab('seek')" id="tab-seek" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
+      <button onclick="switchTab('seek')" id="tab-seek" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-video-camera text-lg text-amber-400"></i>
         VLOG TIMELINE
       </button>
-      <button onclick="switchTab('stats')" id="tab-stats" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
+      <button onclick="switchTab('stats')" id="tab-stats" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-chart-bar text-lg text-emerald-400"></i>
         DATA CENTER
       </button>
-      <button onclick="switchTab('future')" id="tab-future" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
+      <button onclick="switchTab('future')" id="tab-future" class="nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold border border-slate-800 flex items-center gap-2 text-sm transition">
         <i class="ph-bold ph-graduation-cap text-lg text-amber-400"></i>
         FUTURE OF 2027
       </button>
@@ -307,16 +307,11 @@
               <h2 class="text-3xl sm:text-4xl font-vcr text-cyan-400 tracking-wider">
                 CLASSMATE PROFILES
               </h2>
-              <p class="text-sm text-slate-100 font-sans mt-2 leading-relaxed max-w-3xl mx-auto">
+              <p class="text-sm text-white font-sans mt-2 leading-relaxed max-w-3xl mx-auto">
                 Find information on everyone who has made an appearance in the vlog throughout our senior year. Click any <span class="text-cyan-400 font-bold">Classmate Profile</span> below to view their total appearance count, target college or university, and favorite media (favorite song & movie).
               </p>
               
               <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs font-sans">
-                <button onclick="switchTab('stats')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/40 text-amber-300 hover:bg-amber-500/20 transition">
-                  <i class="ph-bold ph-trophy text-amber-400 text-sm"></i>
-                  <span>Looking for rank information? Visit the <strong>Data Center</strong> tab for the full rank leaderboard!</span>
-                </button>
-
                 <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-950/60 border border-red-700/60 text-red-300">
                   <i class="ph-bold ph-user-minus text-red-400 text-sm"></i>
                   <span><strong>Notice:</strong> If you don't want to be in the vlog, please talk to me to be removed!</span>
@@ -332,14 +327,14 @@
             
             <!-- Search Input -->
             <div class="relative flex-1">
-              <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-              <input type="text" id="searchInput" oninput="filterData()" placeholder="SEARCH CLASSMATE OR VLOG DATE (e.g. Aaden, Aug. 18)..." class="w-full bg-slate-950 border border-slate-700 text-slate-100 placeholder-slate-500 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-cyan-500 font-mono">
+              <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-white text-lg"></i>
+              <input type="text" id="searchInput" oninput="filterData()" placeholder="SEARCH CLASSMATE OR VLOG DATE (e.g. Aaden, Aug. 18)..." class="w-full bg-slate-950 border border-slate-700 text-white placeholder-slate-400 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-cyan-500 font-mono">
             </div>
 
             <!-- Sort Order Selector -->
-            <div class="flex items-center gap-2 text-xs text-slate-400">
-              <label for="sortSelect" class="font-vcr text-sm text-slate-300">SORT BY:</label>
-              <select id="sortSelect" onchange="filterData()" class="bg-slate-950 border border-slate-700 text-slate-200 text-xs rounded-lg px-3 py-2.5 focus:outline-none focus:border-cyan-500 font-mono">
+            <div class="flex items-center gap-2 text-xs text-white">
+              <label for="sortSelect" class="font-vcr text-sm text-white">SORT BY:</label>
+              <select id="sortSelect" onchange="filterData()" class="bg-slate-950 border border-slate-700 text-white text-xs rounded-lg px-3 py-2.5 focus:outline-none focus:border-cyan-500 font-mono">
                 <option value="name-asc">Name (A - Z)</option>
                 <option value="name-desc">Name (Z - A)</option>
                 <option value="appearances-desc">Most Cameos</option>
@@ -350,12 +345,12 @@
           </div>
 
           <!-- Quick Stats Bar -->
-          <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400 font-mono">
+          <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-white font-mono">
             <div>
               SHOWING <span id="visibleCount" class="text-cyan-400 font-bold">41</span> LOGGED CLASSMATES
             </div>
-            <div class="text-slate-500">
-              TOTAL CLASSMATES: <span id="totalClassRecords" class="text-slate-300 font-bold">41</span>
+            <div class="text-white">
+              TOTAL CLASSMATES: <span id="totalClassRecords" class="text-white font-bold">41</span>
             </div>
           </div>
         </div>
@@ -373,7 +368,7 @@
           
           <div class="text-center max-w-xl mx-auto mb-8">
             <h2 class="text-3xl sm:text-4xl font-vcr text-amber-400 tracking-wider">VLOG TIMELINE</h2>
-            <p class="text-sm text-slate-100 font-sans mt-1">
+            <p class="text-sm text-white font-sans mt-1">
               Drag the VCR head or select a recorded day below to view who was recorded on each day.
             </p>
           </div>
@@ -397,7 +392,7 @@
           <!-- Active Selected Date Results -->
           <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-              <h3 class="text-lg font-vcr text-slate-200 flex items-center gap-2">
+              <h3 class="text-lg font-vcr text-white flex items-center gap-2">
                 <i class="ph-bold ph-notebook text-cyan-400"></i>
                 CLASSMATES LOGGED ON <span id="scrubDateHeader" class="text-cyan-400">AUG 18, 2026</span>
               </h3>
@@ -426,7 +421,7 @@
                 <i class="ph-bold ph-users text-3xl"></i>
               </div>
               <div>
-                <div class="text-xs text-slate-400 font-vcr uppercase">Total Unique Classmates</div>
+                <div class="text-xs text-white font-vcr uppercase">Total Unique Classmates</div>
                 <div id="kpiUniqueStudents" class="text-3xl font-bold font-vcr text-cyan-400 glow-cyan">41</div>
               </div>
             </div>
@@ -436,7 +431,7 @@
                 <i class="ph-bold ph-video-camera text-3xl"></i>
               </div>
               <div>
-                <div class="text-xs text-slate-400 font-vcr uppercase">Total Cameos Logged</div>
+                <div class="text-xs text-white font-vcr uppercase">Total Cameos Logged</div>
                 <div id="kpiTotalLogs" class="text-3xl font-bold font-vcr text-emerald-400 glow-green">80</div>
               </div>
             </div>
@@ -446,7 +441,7 @@
                 <i class="ph-bold ph-fire text-3xl"></i>
               </div>
               <div>
-                <div class="text-xs text-slate-400 font-vcr uppercase">Busiest Day Vlogged</div>
+                <div class="text-xs text-white font-vcr uppercase">Busiest Day Vlogged</div>
                 <div id="kpiBusiestDay" class="text-2xl font-bold font-vcr text-purple-400">Sep. 21, 2026 (14 Cameos)</div>
               </div>
             </div>
@@ -459,33 +454,10 @@
               <h3 class="font-vcr text-lg text-cyan-400 flex items-center gap-2">
                 <i class="ph-bold ph-waveform"></i> CAMEO VOLUME SPECTRUM
               </h3>
-              <span id="chartDatesCount" class="text-xs text-slate-400 font-mono">13 RECORDED DAYS</span>
+              <span id="chartDatesCount" class="text-xs text-white font-mono">13 RECORDED DAYS</span>
             </div>
             <div class="h-64 relative">
               <canvas id="timelineChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Dynamic Ranked Leaderboard (Valedictorian, Diamond, Gold, Silver, Bronze, Unranked) -->
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 border-b border-slate-800 pb-3">
-              <div>
-                <h3 class="font-vcr text-lg text-yellow-400 flex items-center gap-2">
-                  <i class="ph-bold ph-trophy text-xl text-yellow-400"></i> CLASSMATE RANK LEADERBOARD
-                </h3>
-                <p class="text-xs text-slate-100 font-sans mt-0.5">Dynamically calculated by appearance frequency and tie handling.</p>
-              </div>
-              <div class="flex flex-wrap items-center gap-2 text-xs font-vcr">
-                <span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-300 border border-yellow-400">🎓 Valedictorian (1st)</span>
-                <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400">💎 Diamond (2nd)</span>
-                <span class="px-2 py-0.5 rounded bg-yellow-500/30 text-yellow-400 border border-yellow-400 font-bold">🥇 Gold (3rd)</span>
-                <span class="px-2 py-0.5 rounded bg-slate-300/20 text-slate-200 border border-slate-300">🥈 Silver (4th)</span>
-                <span class="px-2 py-0.5 rounded bg-amber-950/60 text-amber-600 border border-amber-800">🥉 Bronze (5th)</span>
-              </div>
-            </div>
-
-            <div id="rankedLeaderboardGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- Populated dynamically via JS -->
             </div>
           </div>
 
@@ -501,7 +473,7 @@
             <div class="flex flex-col items-center text-center gap-4 border-b border-slate-800 pb-5">
               <div class="max-w-3xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl font-vcr text-amber-400 tracking-wider">FUTURE OF 2027</h2>
-                <p class="text-sm text-slate-100 font-sans mt-1">
+                <p class="text-sm text-white font-sans mt-1">
                   Explore the colleges and universities selected by senior classmates. Destinations will be updated at the end of the year to reflect where they officially attend.
                 </p>
               </div>
@@ -509,11 +481,11 @@
               <!-- Quick Destination Stats -->
               <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
                 <div class="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-800 text-center">
-                  <div class="text-[10px] font-vcr text-slate-400 uppercase">COLLEGES</div>
+                  <div class="text-[10px] font-vcr text-white uppercase">COLLEGES</div>
                   <div id="kpiTotalSchools" class="text-xl font-vcr text-cyan-400 font-bold glow-cyan">0</div>
                 </div>
                 <div class="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-800 text-center">
-                  <div class="text-[10px] font-vcr text-slate-400 uppercase">MOST POPULAR</div>
+                  <div class="text-[10px] font-vcr text-white uppercase">MOST POPULAR</div>
                   <div id="kpiTopSchool" class="text-sm font-vcr text-amber-300 font-bold truncate max-w-[140px]">TBA</div>
                 </div>
               </div>
@@ -536,7 +508,7 @@
         <!-- Rainbow Strip Header -->
         <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-amber-400 via-green-400 via-cyan-400 to-purple-500"></div>
 
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white hover:text-cyan-400 text-xl">
           <i class="ph-bold ph-x"></i>
         </button>
 
@@ -545,32 +517,31 @@
             <i class="ph-bold ph-cassette-tape"></i>
           </div>
           <div>
-            <span id="modalRankBadge" class="hidden"></span>
-            <h2 id="modalStudentName" class="text-xl sm:text-2xl font-marker text-slate-100 mt-1">Student Name</h2>
+            <h2 id="modalStudentName" class="text-xl sm:text-2xl font-marker text-white mt-1">Student Name</h2>
           </div>
         </div>
 
         <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-4 space-y-2">
           <div class="flex justify-between items-center text-xs font-vcr">
-            <span class="text-slate-400">TOTAL CAMEOS:</span>
+            <span class="text-white">TOTAL CAMEOS:</span>
             <span id="modalCount" class="text-cyan-400 font-bold text-base">5 Cameos</span>
           </div>
           <div class="flex justify-between items-center text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400">TARGET COLLEGE:</span>
+            <span class="text-white">TARGET COLLEGE:</span>
             <span id="modalUniversity" class="text-amber-300 font-bold text-sm flex items-center gap-1.5">
               <i class="ph-bold ph-graduation-cap text-amber-400 text-base"></i>
               <span>TBA</span>
             </span>
           </div>
           <div class="flex justify-between items-start gap-2 text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400 shrink-0">FAVORITE SONG:</span>
+            <span class="text-white shrink-0">FAVORITE SONG:</span>
             <span id="modalSong" class="text-cyan-300 font-bold text-xs flex items-center justify-end gap-1.5 text-right min-w-0 break-words leading-tight">
               <i class="ph-bold ph-music-notes text-cyan-400 text-base shrink-0"></i>
               <span class="break-words">TBA</span>
             </span>
           </div>
           <div class="flex justify-between items-start gap-2 text-xs font-vcr pt-2 border-t border-slate-800/80">
-            <span class="text-slate-400 shrink-0">FAVORITE MOVIE:</span>
+            <span class="text-white shrink-0">FAVORITE MOVIE:</span>
             <span id="modalMovie" class="text-purple-300 font-bold text-xs flex items-center justify-end gap-1.5 text-right min-w-0 break-words leading-tight">
               <i class="ph-bold ph-film-strip text-purple-400 text-base shrink-0"></i>
               <span class="break-words">TBA</span>
@@ -588,7 +559,7 @@
         </div>
 
         <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end">
-          <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold font-vcr rounded-lg border border-slate-700">
+          <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold font-vcr rounded-lg border border-slate-700">
             EJECT TAPE [CLOSE]
           </button>
         </div>
@@ -597,7 +568,7 @@
     </div>
 
     <!-- Footer Status -->
-    <footer class="mt-12 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-2">
+    <footer class="mt-12 pt-6 border-t border-slate-800/80 text-center text-xs text-white font-mono flex flex-col sm:flex-row items-center justify-between gap-2">
       <div>Chromebook Archives: Senior Year</div>
       <div class="flex items-center gap-2">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
@@ -675,66 +646,12 @@
       } catch (e) { console.warn("Failed loading stored vlog data", e); }
     }
 
-    // Helper function to dynamically compute ranking tiers based on appearance counts
-    function getRankInfo(count) {
-      const sortedDistinctCounts = [...new Set(RAW_DATA.map(d => d.count))].sort((a, b) => b - a);
-      const topCount = sortedDistinctCounts[0] || 0;
-      const secondCount = sortedDistinctCounts[1] || 0;
-      const thirdCount = sortedDistinctCounts[2] || 0;
-      const fourthCount = sortedDistinctCounts[3] || 0;
-      const fifthCount = sortedDistinctCounts[4] || 0;
-
-      if (count > 0 && count === topCount) {
-        return { 
-          name: 'Valedictorian', 
-          class: 'bg-yellow-500/20 text-yellow-300 border-yellow-400 glow-amber', 
-          icon: '🎓',
-          badgeClass: 'bg-yellow-500/20 text-yellow-300 border-yellow-400'
-        };
-      } else if (count > 0 && count === secondCount) {
-        return { 
-          name: 'Diamond', 
-          class: 'bg-cyan-500/20 text-cyan-300 border-cyan-400 glow-cyan', 
-          icon: '💎',
-          badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-400'
-        };
-      } else if (count > 0 && count === thirdCount) {
-        return { 
-          name: 'Gold', 
-          class: 'bg-yellow-500/30 text-yellow-400 border-yellow-400 glow-amber', 
-          icon: '🥇',
-          badgeClass: 'bg-yellow-500/30 text-yellow-400 border-yellow-400'
-        };
-      } else if (count > 0 && count === fourthCount) {
-        return { 
-          name: 'Silver', 
-          class: 'bg-slate-300/20 text-slate-200 border-slate-300', 
-          icon: '🥈',
-          badgeClass: 'bg-slate-300/20 text-slate-200 border-slate-300'
-        };
-      } else if (count > 0 && count === fifthCount) {
-        return { 
-          name: 'Bronze', 
-          class: 'bg-amber-950/60 text-amber-600 border-amber-800', 
-          icon: '🥉',
-          badgeClass: 'bg-amber-950/60 text-amber-600 border-amber-800'
-        };
-      } else {
-        return { 
-          name: 'Unranked', 
-          class: 'bg-slate-900/80 text-slate-400 border-slate-700', 
-          icon: '⚪',
-          badgeClass: 'bg-slate-900 text-slate-400 border-slate-700'
-        };
-      }
-    }
-
     // Helper function to get school badge branding
     function getSchoolBadge(university) {
       if (!university || university === "TBA") {
         return {
           short: "TBA",
-          class: "bg-slate-800 text-slate-300 border-slate-600"
+          class: "bg-slate-800 text-white border-slate-600"
         };
       }
       const u = university.toLowerCase();
@@ -998,7 +915,7 @@
       
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.nav-tab').forEach(el => {
-        el.className = "nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold border border-slate-800 flex items-center gap-2 text-sm transition";
+        el.className = "nav-tab px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold border border-slate-800 flex items-center gap-2 text-sm transition";
       });
 
       const targetView = document.getElementById(`view-${tabId}`);
@@ -1063,7 +980,7 @@
         const studentsHtml = students.map(st => `
           <div onclick="openStudentModal(RAW_DATA.find(r => r.name === '${st.name.replace(/'/g, "\\'")}'))" 
                class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/80 border border-slate-800/80 hover:border-cyan-500/50 hover:bg-slate-800/60 cursor-pointer transition group">
-            <span class="font-marker text-slate-100 text-sm truncate" title="${st.name}">${st.name}</span>
+            <span class="font-marker text-white text-sm truncate" title="${st.name}">${st.name}</span>
           </div>
         `).join('');
 
@@ -1074,7 +991,7 @@
                 <span class="px-2.5 py-1 rounded text-xs font-bold border font-vcr ${schoolBadge.class}">
                   ${schoolBadge.short}
                 </span>
-                <h3 class="font-vcr text-base sm:text-lg font-bold text-slate-100 tracking-wide">${displayName}</h3>
+                <h3 class="font-vcr text-base sm:text-lg font-bold text-white tracking-wide">${displayName}</h3>
               </div>
               <span class="px-2.5 py-1 rounded-full bg-slate-800 text-cyan-300 font-vcr text-xs font-bold border border-slate-700 whitespace-nowrap">
                 ${students.length} ${students.length === 1 ? 'STUDENT' : 'STUDENTS'}
@@ -1153,24 +1070,18 @@
 
       if (items.length === 0) {
         container.innerHTML = `
-          <div class="col-span-full bg-slate-900 border border-slate-800 rounded-xl p-8 text-center text-slate-400">
-            <i class="ph-bold ph-cassette-tape text-4xl text-slate-600 mb-2"></i>
-            <p class="font-vcr text-lg text-slate-300">NO VLOG TAPE RECORDS FOUND</p>
-            <p class="text-xs text-slate-500 mt-1">Try broadening your search term.</p>
+          <div class="col-span-full bg-slate-900 border border-slate-800 rounded-xl p-8 text-center text-white">
+            <i class="ph-bold ph-cassette-tape text-4xl text-white mb-2"></i>
+            <p class="font-vcr text-lg text-white">NO VLOG TAPE RECORDS FOUND</p>
+            <p class="text-xs text-white mt-1">Try broadening your search term.</p>
           </div>
         `;
         return;
       }
 
       items.forEach((item, index) => {
-        const rank = getRankInfo(item.count);
         const school = getSchoolBadge(item.university);
-
-        const rankBadgeHtml = rank.name !== 'Unranked'
-          ? `<span class="px-2 py-0.5 rounded text-[11px] font-bold border font-vcr flex items-center gap-1 ${rank.class}">
-              <span>${rank.icon}</span> ${rank.name.toUpperCase()} (${item.count})
-            </span>`
-          : `<span class="text-[11px] font-vcr text-slate-500 font-bold px-1.5 py-0.5">${item.count} ${item.count === 1 ? 'CAMEO' : 'CAMEOS'}</span>`;
+        const cameoBadgeHtml = `<span class="text-xs font-vcr text-white font-bold">${item.count} ${item.count === 1 ? 'CAMEO' : 'CAMEOS'}</span>`;
 
         const card = document.createElement('div');
         card.className = "cassette-box rounded-xl p-4 cursor-pointer flex flex-col justify-between";
@@ -1180,12 +1091,12 @@
           <div>
             <div class="flex items-center justify-between mb-2 text-xs">
               <div class="flex items-center gap-1.5">
-                <span class="font-vcr text-slate-500 text-[10px]">#${String(index + 1).padStart(3, '0')}</span>
+                <span class="font-vcr text-white text-[10px]">#${String(index + 1).padStart(3, '0')}</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-bold border font-vcr uppercase ${school.class}">
                   ${school.short}
                 </span>
               </div>
-              ${rankBadgeHtml}
+              ${cameoBadgeHtml}
             </div>
 
             <div class="masking-tape rounded px-3.5 py-3 my-2.5 min-h-[54px] flex items-center border border-amber-300/80">
@@ -1194,12 +1105,12 @@
           </div>
 
           <div class="mt-3 pt-3 border-t border-slate-800/80">
-            <div class="flex items-center justify-between bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800/80 text-xs font-mono text-slate-400">
+            <div class="flex items-center justify-between bg-slate-950 px-2.5 py-1.5 rounded border border-slate-800/80 text-xs font-mono text-white">
               <div class="flex items-center gap-1.5 truncate">
                 <i class="ph-bold ph-calendar text-cyan-400"></i>
                 <span class="truncate">${item.timestamps[0]}</span>
               </div>
-              ${item.timestamps.length > 1 ? `<span class="text-slate-500 text-[10px]">+${item.timestamps.length - 1} MORE</span>` : ''}
+              ${item.timestamps.length > 1 ? `<span class="text-white text-[10px]">+${item.timestamps.length - 1} MORE</span>` : ''}
             </div>
           </div>
         `;
@@ -1235,16 +1146,6 @@
         movieElem.setAttribute('title', formattedMovie);
       }
 
-      const rank = getRankInfo(item.count);
-      const badgeElem = document.getElementById('modalRankBadge');
-      if (rank.name !== 'Unranked') {
-        badgeElem.className = `text-xs font-vcr px-2.5 py-1 rounded border inline-flex items-center gap-1.5 ${rank.class}`;
-        badgeElem.innerHTML = `<span>${rank.icon}</span> RANK: ${rank.name.toUpperCase()} (${item.count} CAMEOS)`;
-      } else {
-        badgeElem.className = 'hidden';
-        badgeElem.innerHTML = '';
-      }
-
       const list = document.getElementById('modalTimestamps');
       list.innerHTML = '';
 
@@ -1253,7 +1154,7 @@
         li.className = "bg-slate-900 p-2.5 rounded-lg border border-slate-800 flex items-center gap-2 text-xs font-mono";
         li.innerHTML = `
           <span class="w-5 h-5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 flex items-center justify-center font-vcr text-xs font-bold">${idx + 1}</span>
-          <span class="text-slate-200">${ts}</span>
+          <span class="text-white">${ts}</span>
         `;
         list.appendChild(li);
       });
@@ -1280,7 +1181,7 @@
       UNIQUE_DATES.forEach((dateStr, idx) => {
         const btn = document.createElement('button');
         btn.id = `date-pill-${idx}`;
-        btn.className = "px-3 py-1.2 rounded-md bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs border border-slate-800 font-vcr transition";
+        btn.className = "px-3 py-1.2 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs border border-slate-800 font-vcr transition";
         btn.textContent = dateStr;
         btn.onclick = () => {
           scrubber.value = idx;
@@ -1306,7 +1207,7 @@
           if (i == idx) {
             p.className = "px-3 py-1.2 rounded-md bg-amber-400 text-slate-950 font-bold text-xs border border-amber-300 font-vcr shadow-md shadow-amber-400/20";
           } else {
-            p.className = "px-3 py-1.2 rounded-md bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs border border-slate-800 font-vcr transition";
+            p.className = "px-3 py-1.2 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs border border-slate-800 font-vcr transition";
           }
         }
       });
@@ -1323,7 +1224,7 @@
         div.onclick = () => openStudentModal(st);
         div.innerHTML = `
           <div>
-            <div class="font-bold text-slate-200 text-base sm:text-lg">${st.name}</div>
+            <div class="font-bold text-white text-base sm:text-lg">${st.name}</div>
           </div>
           <i class="ph-bold ph-caret-right text-cyan-400 text-lg"></i>
         `;
@@ -1365,65 +1266,14 @@
           scales: {
             y: {
               grid: { color: 'rgba(51, 65, 85, 0.4)' },
-              ticks: { color: '#94a3b8', font: { family: 'Share Tech Mono' } }
+              ticks: { color: '#ffffff', font: { family: 'Share Tech Mono' } }
             },
             x: {
               grid: { color: 'rgba(51, 65, 85, 0.2)' },
-              ticks: { color: '#94a3b8', font: { family: 'Share Tech Mono' } }
+              ticks: { color: '#ffffff', font: { family: 'Share Tech Mono' } }
             }
           }
         }
-      });
-
-      renderRankedLeaderboardGrid();
-    }
-
-    function renderRankedLeaderboardGrid() {
-      const grid = document.getElementById('rankedLeaderboardGrid');
-      if (!grid) return;
-      grid.innerHTML = '';
-
-      const ranksToDisplay = [
-        { key: 'Valedictorian', title: '🎓 Valedictorian Tier', colorClass: 'border-yellow-500/50 bg-yellow-950/20 text-yellow-300' },
-        { key: 'Diamond', title: '💎 Diamond Tier', colorClass: 'border-cyan-500/50 bg-cyan-950/20 text-cyan-300' },
-        { key: 'Gold', title: '🥇 Gold Tier', colorClass: 'border-yellow-500/70 bg-yellow-950/40 text-yellow-400' },
-        { key: 'Silver', title: '🥈 Silver Tier', colorClass: 'border-slate-300/50 bg-slate-800/30 text-slate-200' },
-        { key: 'Bronze', title: '🥉 Bronze Tier', colorClass: 'border-amber-800/70 bg-orange-950/40 text-amber-600' },
-        { key: 'Unranked', title: '⚪ Unranked Tier', colorClass: 'border-slate-800 bg-slate-950/40 text-slate-400' }
-      ];
-
-      ranksToDisplay.forEach(tier => {
-        const studentsInTier = RAW_DATA.filter(s => getRankInfo(s.count).name === tier.key)
-                                       .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-
-        const card = document.createElement('div');
-        card.className = `rounded-xl border p-4 flex flex-col justify-between ${tier.colorClass}`;
-
-        let studentsListHtml = '';
-        if (studentsInTier.length === 0) {
-          studentsListHtml = `<p class="text-xs text-slate-500 font-mono italic">No classmates currently in this tier.</p>`;
-        } else {
-          studentsListHtml = studentsInTier.map(st => `
-            <div onclick="openStudentModal(RAW_DATA.find(r => r.name === '${st.name.replace(/'/g, "\\'")}'))" class="flex items-center justify-between py-1.5 border-b border-slate-800/60 last:border-0 cursor-pointer hover:bg-slate-800/40 px-1.5 rounded transition">
-              <span class="font-marker text-sm text-slate-200 truncate" title="${st.name}">${st.name}</span>
-              <span class="text-xs font-vcr font-bold text-cyan-400 ml-2">${st.count} LOGS</span>
-            </div>
-          `).join('');
-        }
-
-        card.innerHTML = `
-          <div>
-            <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-800/80">
-              <h4 class="font-vcr font-bold text-sm tracking-wide uppercase">${tier.title}</h4>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-900 border border-slate-800">${studentsInTier.length}</span>
-            </div>
-            <div class="space-y-1 max-h-52 overflow-y-auto pr-1">
-              ${studentsListHtml}
-            </div>
-          </div>
-        `;
-
-        grid.appendChild(card);
       });
     }
 
